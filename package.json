@@ -1,20 +1,21 @@
 {
-  "name": "typescript-action",
-  "description": "GitHub Actions TypeScript template",
+  "name": "forgejo-actions",
+  "description": "Forgejo Actions template",
   "version": "0.0.0",
   "author": "",
   "type": "module",
   "private": true,
-  "homepage": "https://github.com/actions/typescript-action",
+  "homepage": "https://github.com/vicamo/forgejo-actions",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/vicamo/forgejo-actions.git"
   },
   "bugs": {
-    "url": "https://github.com/actions/typescript-action/issues"
+    "url": "https://github.com/vicamo/forgejo-actions/issues"
   },
   "keywords": [
-    "actions"
+    "actions",
+    "forgejo"
   ],
   "exports": {
     ".": "./dist/index.js"

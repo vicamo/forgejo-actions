@@ -1,11 +1,10 @@
-name: The name of your action here
-description: Provide a description here
-author: Your name or organization here
+name: Forgejo Actions
+description: GitHub actions collection for Forgejo
+author: You-Sheng Yang
 
-# Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
-  icon: heart
-  color: red
+  icon: code
+  color: orange
 
 # Define your inputs here.
 inputs:
