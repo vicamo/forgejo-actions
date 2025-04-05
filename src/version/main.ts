@@ -1,15 +1,21 @@
 import * as core from '@actions/core'
+import { forgejoApi } from 'forgejo-js'
+import { version } from '../forgejo.js'
 
 /**
  * The main function for the action.
  */
-export function run() {
+export async function run() {
   try {
     const server_url: string = core.getInput('server_url')
+    const token: string = core.getInput('token')
 
     core.debug(`Using server instance at ${server_url} ...`)
 
-    core.setOutput('version', '0.0')
+    const api = forgejoApi(server_url, { token: token })
+    const v = await version(api)
+
+    core.setOutput('version', v)
   } catch (error) {
     // Fail the workflow run if an error occurs
     if (error instanceof Error) core.setFailed(error.message)
