@@ -34113,6 +34113,7 @@ function forgejoApi(baseUrl, options) {
  */
 async function version(api) {
     return api.version.getVersion().then(async (response) => {
+        coreExports.info(JSON.stringify(response.data));
         if (response.data.version === undefined)
             throw new Error('server_version undefined');
         return response.data.version;

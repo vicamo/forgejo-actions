@@ -1,6 +1,6 @@
 import * as core from '@actions/core'
 import { forgejoApi } from 'forgejo-js'
-import { version } from '../forgejo.js'
+import * as forgejo from '../forgejo.js'
 
 /**
  * The main function for the action.
@@ -13,7 +13,7 @@ export async function run() {
     core.debug(`Using server instance at ${server_url} ...`)
 
     const api = forgejoApi(server_url, { token: token })
-    const v = await version(api)
+    const v = await forgejo.version(api)
 
     core.setOutput('version', v)
   } catch (error) {
