@@ -62,3 +62,24 @@ jobs:
       - name: Print Output
         id: output
         run: echo "${{ steps.test-action.outputs.time }}"
+
+  test-version-action:
+    name: Test actions/version
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Test Local Action
+        id: test-action
+        uses: ./actions/version
+        with:
+          server_url: 'https://codeberg.org'
+
+      - name: Validate version string
+        run: |
+          echo "${{ steps.test-action.outputs.version }}"
+
+          version="$(echo "${{ steps.test-action.outputs.version }}" | sed 's,^\(\d+\.\d+\),\1,p')"
+          [ -n "$version" ] || exit 1
