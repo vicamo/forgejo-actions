@@ -18,7 +18,8 @@
     "forgejo"
   ],
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "version": "./dist/version.js"
   },
   "engines": {
     "node": ">=20"
