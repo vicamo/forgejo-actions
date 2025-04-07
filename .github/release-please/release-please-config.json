@@ -43,7 +43,15 @@
       "changelog-path": "CHANGELOG.md",
       "include-component-in-tag": false,
       "release-type": "node",
-      "extra-files": ["action.yml", "README.md"]
+      "extra-files": [
+        "README.md",
+        "action.yml",
+        {
+          "type": "yaml",
+          "path": "actions/*/action.yml",
+          "glob": true
+        }
+      ]
     }
   }
 }
