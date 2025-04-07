@@ -1,4 +1,18 @@
+<!-- markdownlint-disable MD024 -->
+
 # Changelog
+
+## [1.0.1](https://github.com/vicamo/forgejo-actions/compare/v1.0.0...v1.0.1) (2025-04-07)
+
+### 🐛 Bugfixes
+
+- add sub action YAML to r-p extra-files
+  ([f6ed27d](https://github.com/vicamo/forgejo-actions/commit/f6ed27d84075821508ef88424b3e98bc0419e355))
+
+### 🧰 Maintenance
+
+- **deps-dev:** Bump the npm-development group across 1 directory with 3 updates
+  ([d122c6a](https://github.com/vicamo/forgejo-actions/commit/d122c6a632f9f0fc01e6b87c6049202c34591e26))
 
 ## 1.0.0 (2025-04-07)
 
