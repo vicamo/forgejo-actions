@@ -1,0 +1,30 @@
+name: Forgejo Version Action
+description: Retrieve verion string of a Forgejo instance
+author: You-Sheng Yang
+
+branding:
+  icon: code
+  color: orange
+
+inputs:
+  server_url:
+    description: >
+      The server URL for the Forgejo instance that you are connecting to. Will
+      use environment defaults from the same instance that the workflow is
+      running from unless specified. Example URL is https://forgejo.org.
+    default: ${{ github.server_url }}
+  token:
+    description: >
+      Access Token used to authenticate the query.
+
+      Learn more about [Generating and listing API
+      tokens](https://forgejo.org/docs/latest/user/api-usage/#generating-and-listing-api-tokens).
+    default: ''
+
+outputs:
+  version:
+    description: Server version.
+
+runs:
+  using: node20
+  main: ../../dist/version.js

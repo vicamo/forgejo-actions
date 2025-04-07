@@ -18,7 +18,8 @@
     "forgejo"
   ],
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "version": "./dist/version.js"
   },
   "engines": {
     "node": ">=20"
@@ -38,7 +39,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.11.1"
+    "@actions/core": "^1.11.1",
+    "forgejo-js": "^9.0.0"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.8",
