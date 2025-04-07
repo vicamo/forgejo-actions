@@ -44,8 +44,14 @@
       "include-component-in-tag": false,
       "release-type": "node",
       "extra-files": [
-        "README.md",
-        "action.yml",
+        {
+          "type": "generic",
+          "path": "README.md"
+        },
+        {
+          "type": "generic",
+          "path": "action.yml"
+        },
         {
           "type": "yaml",
           "path": "actions/*/action.yml",
