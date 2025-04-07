@@ -1,4 +1,5 @@
 import * as core from '@actions/core'
+import type * as forgejo from 'forgejo-js'
 import { forgejoApi, Api } from 'forgejo-js'
 
 /**
@@ -30,4 +31,18 @@ export async function version(api: Api<unknown>): Promise<string> {
     throw new Error('Server version undefined.')
 
   return response.data.version
+}
+
+/**
+ * List pull requests.
+ *
+ * @param api The API handle.
+ * @returns Resolves with the server version string.
+ */
+export async function listPullRequests(
+  api: Api<unknown>,
+  owner: string,
+  repo: string
+): Promise<forgejo.PullRequest[]> {
+  return []
 }
