@@ -1,0 +1,53 @@
+name: Forgejo List Pull Requests Action
+description: Forgejo Action that lists pull requests with filtering conditions
+author: You-Sheng Yang
+
+branding:
+  icon: code
+  color: orange
+
+inputs:
+  server_url:
+    description: >
+      The server URL for the Forgejo instance that you are connecting to. Will
+      use environment defaults from the same instance that the workflow is
+      running from unless specified. Example URL is https://forgejo.org.
+    default: ${{ github.server_url }}
+  token:
+    description: >
+      Access Token used to authenticate the query.
+
+      Learn more about [Generating and listing API
+      tokens](https://forgejo.org/docs/latest/user/api-usage/#generating-and-listing-api-tokens).
+    default: ''
+  repository:
+    description: >
+      Repository name with owner. For example, vicamo/gitea-list-pull-requests
+    default: ${{ github.repository }}
+  state:
+    description: >
+      State of pull request, e.g. open, closed, or all.
+    default: 'all'
+  milestone:
+    description: >
+      A project milestone name. If the specified milestone is not available for
+      the specified project, it will return an error.
+  labels:
+    description: >
+      A multi-line string with one label name for each line. If any of the
+      specified label is not available for the specified project, it will return
+      an error.
+  page:
+    description: >
+      Page number of results to return (1-based).
+  limit:
+    description: >
+      Page size of results.
+
+outputs:
+  json:
+    description: Array of pull requests object in JSON format.
+
+runs:
+  using: node20
+  main: ../../dist/list-pulls.js

@@ -8,7 +8,7 @@ export async function run() {
   try {
     const api = wrapper.createApi()
 
-    const version = await wrapper.version(api)
+    const version = await wrapper.listPullRequests(api, '', '')
 
     core.setOutput('version', version)
   } catch (error) {
