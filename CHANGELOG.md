@@ -2,6 +2,16 @@
 
 # Changelog
 
+## [1.0.2](https://github.com/vicamo/forgejo-actions/compare/v1.0.1...v1.0.2) (2025-04-14)
+
+
+### 🧰 Maintenance
+
+* **deps-dev:** Bump the npm-development group with 5 updates ([ebefe82](https://github.com/vicamo/forgejo-actions/commit/ebefe8246ef885904b84911b43eb02f8c967b5eb))
+* **deps-dev:** Bump the npm-development group with 5 updates ([c0ff5e9](https://github.com/vicamo/forgejo-actions/commit/c0ff5e90e2dddd18276edc90623b6ce09f8f13c2))
+* **deps:** Bump @rollup/rollup-linux-x64-gnu from 4.39.0 to 4.40.0 ([ffd81eb](https://github.com/vicamo/forgejo-actions/commit/ffd81eb94c011a7857995412d26c7ef634ac73d2))
+* **deps:** Bump @rollup/rollup-linux-x64-gnu from 4.39.0 to 4.40.0 ([093b235](https://github.com/vicamo/forgejo-actions/commit/093b235f8682a440f95b797606631f1f654b6d3b))
+
 ## [1.0.1](https://github.com/vicamo/forgejo-actions/compare/v1.0.0...v1.0.1) (2025-04-07)
 
 ### 🐛 Bugfixes
