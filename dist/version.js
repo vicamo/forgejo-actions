@@ -34106,6 +34106,19 @@ function forgejoApi(baseUrl, options) {
  */
 
 /**
+ * Helper function to create forgejoApi from github inputs.
+ *
+ * @returns an Api instance instantiated from input server url and the authenticate token.
+ */
+function createApi() {
+    const server_url = coreExports.getInput('server_url');
+    const token = coreExports.getInput('token');
+    coreExports.debug(`Using server instance at ${server_url} ...`);
+    const options = token !== '' ? { token: token } : undefined;
+    const api = forgejoApi(server_url, options);
+    return api;
+}
+/**
  * Retrieve version string.
  *
  * @param api The API handle.
@@ -34123,11 +34136,7 @@ async function version(api) {
  */
 async function run() {
     try {
-        const server_url = coreExports.getInput('server_url');
-        const token = coreExports.getInput('token');
-        coreExports.debug(`Using server instance at ${server_url} ...`);
-        const options = token !== '' ? { token: token } : undefined;
-        const api = forgejoApi(server_url, options);
+        const api = createApi();
         const version$1 = await version(api);
         coreExports.setOutput('version', version$1);
     }

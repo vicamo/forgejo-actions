@@ -1,5 +1,4 @@
 import * as core from '@actions/core'
-import { forgejoApi } from 'forgejo-js'
 import * as wrapper from '../wrapper.js'
 
 /**
@@ -7,13 +6,8 @@ import * as wrapper from '../wrapper.js'
  */
 export async function run() {
   try {
-    const server_url: string = core.getInput('server_url')
-    const token: string = core.getInput('token')
+    const api = wrapper.createApi()
 
-    core.debug(`Using server instance at ${server_url} ...`)
-
-    const options = token !== '' ? { token: token } : undefined
-    const api = forgejoApi(server_url, options)
     const version = await wrapper.version(api)
 
     core.setOutput('version', version)
